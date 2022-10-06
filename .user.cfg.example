@@ -1,0 +1,27 @@
+[twitter_user_config]
+# All config params are explained in depth in the repo.
+
+# API key and Secret key created on Twitter
+t_api_key= INSERT  YOUR  TOKEN
+t_api_key_secret = INSERT  YOUR  TOKEN 
+t_access_token = INSERT  YOUR  TOKEN 
+t_access_token_secret = INSERT  YOUR  TOKEN
+
+#API key of openAI
+openai_api_key = INSERT  YOUR  TOKEN
+
+#API key of replicate (stable-diffusion)
+replicate_api_key = INSERT  YOUR  TOKEN
+
+#Twitter parameters
+t_user_name=INSERT USER  NAME IN TWITTER
+reply_sleep_time=20
+tweet_sleep_time = 15
+tweet_count_time = 0
+
+#GPT3 parameters
+max_tokens = 110
+temperature = 0.75
+
+#Telegram API
+telegram_token = INSERT  YOUR  TOKEN
