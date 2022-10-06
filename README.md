@@ -1,14 +1,10 @@
 # AI Twitter bot
 > AI-reply-tweets bot in any language. 
 
-![github](https://img.shields.io/github/workflow/status/nimhar/AI_twitter_bot/)
-![docker](https://img.shields.io/docker/pulls/nimhar/AI_twitter_bot)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nimhar/AI_twitter_bot)
-
 ## Follow me on Twitter :)
 
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow WhatAIthinks)](https://twitter.com/WhatAIthinks)
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow Nimrod Harel)](https://twitter.com/harel_nimrod)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40WhatAIthinks)](https://twitter.com/WhatAIthinks)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40harel_nimrod)](https://twitter.com/harel_nimrod)
 
 ## Tool Setup
 
