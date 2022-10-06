@@ -22,9 +22,6 @@ class APIManager:
         self.logger = logger
         self.config = config
         self.last_since_id()
-        # self.cache = BinanceCache()
-        # self.stream_manager: Optional[BinanceStreamManager] = None
-        # self.setup_websockets()
 
     def last_since_id(self):
         self.config.SINCE_ID = fetch_last_since_id(self.logger,)
@@ -32,7 +29,3 @@ class APIManager:
     @cached(cache=TTLCache(maxsize=1, ttl=43200))
     def check_connection(self) -> Dict[str, float]:
         return self.twitter_api
-
-    # @cached(cache=TTLCache(maxsize=1, ttl=60))
-    # def get_using_bnb_for_fees(self):
-    #     return self.binance_client.get_bnb_burn_spot_margin()["spotBNBBurn"]
