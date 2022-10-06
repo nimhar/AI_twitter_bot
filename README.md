@@ -1,6 +1,8 @@
 # AI Twitter bot
 > AI-reply-tweets bot in any language. 
 
+I wrote this bot to make artificial intelligence more accessible to all people. Using a language model, I built a bot that responds to random tweets. Every 20 minutes, the bot responds to a trending tweet. Simply reply to the tweet with the word interesting, tag the bot, and the bot will respond on its own within a few minutes. You can use it in any language, so why not? :)
+
 ## Follow me on Twitter :)
 
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40WhatAIthinks)](https://twitter.com/WhatAIthinks)
