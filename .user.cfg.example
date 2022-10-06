@@ -1,4 +1,4 @@
-[twitter_user_config]
+[DEFAULT]
 # All config params are explained in depth in the repo.
 
 # API key and Secret key created on Twitter
