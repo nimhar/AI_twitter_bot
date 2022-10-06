@@ -1,0 +1,23 @@
+# Define version
+version: 1
+
+# Define your URLs (Mandatory!)
+# URLs should start with - (remove the comment symbol #)
+# Replace the values with your tokens/ids
+# For example a telegram URL would look like:
+# - tgram://123456789:AABx8iXjE5C-vG4SDhf6ARgdFgxYxhuHb4A/-606743502
+# Rename the file to `apprise.yml`
+urls:
+  - tgram://5570244014:AAEIlr4dq26UGXZkWJ9iVFozbYVkdFSJE1M/-795079545
+
+  # - discord://WebhookID/WebhookToken/
+  # - slack://tokenA/tokenB/tokenC
+  # More options here: https://github.com/caronc/apprise
+
+
+# Done! Congratulations on your new bot. You will find it at t.me/Autopoet_bot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+# Use this token to access the HTTP API:
+# Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+# For a description of the Bot API, see this page: https://core.telegram.org/bots/api
