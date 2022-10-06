@@ -9,56 +9,49 @@ import requests
 import tweepy
 import os
 
-def run_tweet(manager, logger, config):
-    #authentication
-    api = manager.twitter_api
-    # newsapi = manager.newsapi
-    openai.api_key = config.OPENAI_API_KEY
-    tweets = api.home_timeline()
-    for tweet in tweets:
-        if tweet.lang in config.LANG:
-            logger.info(f'Tweet ID: {tweet.id}')
-            logger.info(f'Tweet text: {tweet.text}')
-            response = openai.Completion.create(
-                    engine="text-davinci-002",
-                    prompt=clean_tweet(tweet.text),
-                    temperature=float(config.TEMPERATURE),
-                    max_tokens=int(config.MAX_TOKENS),
-                    top_p=1,
-                    frequency_penalty=0.1,
-                    presence_penalty=0.1
-                    )
-            response = response.choices[0].text
-            response = clean_tweet(response)
-            try:
-                if len(response)>1:
-                    response += f" @{tweet.user.screen_name}"
-                else:
-                    raise Exception("Tweet is empty")
-                logger.info(f"response: {response}")
-                print('Are you sure? y/n:')
-                if input()=='y':
-                    if np.random.randint(10)>8:
-                        api.update_status(status=response, in_reply_to_status_id=tweet.id)
-                        logger.info('Response has been TWEETED')
-                    # else:
-                    #     api.retweet(id=tweet.id, )
-                else:
-                    logger.info('Response has been CENSORED')
-            except:
-                logger.info('The tweet has not been succeed.')
+# def run_tweet(manager, logger, config):
+#     #authentication
+#     api = manager.twitter_api
+#     # newsapi = manager.newsapi
+#     openai.api_key = config.OPENAI_API_KEY
+#     tweets = api.home_timeline()
+#     for tweet in tweets:
+#         if tweet.lang in config.LANG:
+#             logger.info(f'Tweet ID: {tweet.id}')
+#             logger.info(f'Tweet text: {tweet.text}')
+#             response = openai.Completion.create(
+#                     engine="text-davinci-002",
+#                     prompt=clean_tweet(tweet.text),
+#                     temperature=float(config.TEMPERATURE),
+#                     max_tokens=int(config.MAX_TOKENS),
+#                     top_p=1,
+#                     frequency_penalty=0.1,
+#                     presence_penalty=0.1
+#                     )
+#             response = response.choices[0].text
+#             response = clean_tweet(response)
+#             try:
+#                 if len(response)>1:
+#                     response += f" @{tweet.user.screen_name}"
+#                 else:
+#                     raise Exception("Tweet is empty")
+#                 logger.info(f"response: {response}")
+#                 print('Are you sure? y/n:')
+#                 if input()=='y':
+#                     if np.random.randint(10)>8:
+#                         api.update_status(status=response, in_reply_to_status_id=tweet.id)
+#                         logger.info('Response has been TWEETED')
+#                     # else:
+#                     #     api.retweet(id=tweet.id, )
+#                 else:
+#                     logger.info('Response has been CENSORED')
+#             except:
+#                 logger.info('The tweet has not been succeed.')
 
 def run_mentions(manager, logger, config):
     api = manager.twitter_api
     model_api = manager.ds_model
-    # model = model_api.models.get("stability-ai/stable-diffusion")
-    # model = model_api.models.get("pixray/text2image")
     logger.info("Retrieving mentions")
-    # config.TWEET_COUNT_TIME+=1
-    # if config.TWEET_COUNT_TIME >int(config.REPLY_SLEEP_TIME):
-    #     config.TWEET_COUNT_TIME=0
-    #     run_reply(manager, logger, config)
-    # keywords=["interesting, imagine"]
     for tweet in tweepy.Cursor(api.mentions_timeline,
         since_id=config.SINCE_ID).items():
         config.SINCE_ID = max(tweet.id, int(config.SINCE_ID))
@@ -285,7 +278,11 @@ def clean_tweet(tweet, response = True):
 
 def fetch_last_since_id(logger):
     import pandas as pd
-    df_log = pd.read_csv('logs/twitter_bot.log', on_bad_lines='skip')
-    df_log = df_log.iloc[:,-1]
-    df_log = df_log.dropna()
-    return int(df_log.loc[df_log.str.contains('Since ID:')].iat[-1].split('Since ID: ')[-1])
+    if os.path.exists('logs/twitter_bot.log'):
+        df_log = pd.read_csv('logs/twitter_bot.log', on_bad_lines='skip')
+        df_log = df_log.iloc[:,-1]
+        df_log = df_log.dropna()
+    try:
+        return int(df_log.loc[df_log.str.contains('Since ID:')].iat[-1].split('Since ID: ')[-1])
+    except:
+        return 1
