@@ -8,7 +8,6 @@ version: 1
 # - tgram://123456789:AABx8iXjE5C-vG4SDhf6ARgdFgxYxhuHb4A/-606743502
 # Rename the file to `apprise.yml`
 urls:
-  - tgram://5570244014:AAEIlr4dq26UGXZkWJ9iVFozbYVkdFSJE1M/-795079545
 
   # - discord://WebhookID/WebhookToken/
   # - slack://tokenA/tokenB/tokenC
