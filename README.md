@@ -19,8 +19,15 @@ Create a .cfg file named `user.cfg` based off `.user.cfg.example`.
 
 **The configuration file consists of the following fields:**
 
--   **api_key** - Binance API key generated in the Binance account setup stage.
+-   **api_key** - Twitter API key generated in the Binance account setup stage.
 -   **api_secret_key** - Binance secret key generated in the Binance account setup stage.
+-   **t_api_key** - Twitter API key generated in the twitter developer portal.
+-   **t_api_key_secret** - Twitter API secret-key generated in the twitter developer portal.
+-   **t_access_token** - Twitter API access token generated in the twitter developer portal.
+-   **t_access_token_secret** - Twitter API secret-access token generated in the twitter developer portal.
+-   **t_user_name** - Twitter username of the authenticator user.
+-   **openai_api_key** - OPENAI API key generated in the openai website.
+-   **telegram_api_key** - Telegram API key generated in the telegram website. (for notification only)
 
 
 ### Notifications with Apprise
@@ -38,6 +45,11 @@ If you are interested in running a Telegram bot, more information can be found a
 ```shell
 python -m twitter_bot
 ```
+
+## Acknolegment
+The bot structure is heavily aided by binance-trade-bot which you may find in here: [watch this repo](https://github.com/edeng23/binance-trade-bot/subscription)
+
+
 ## Support the Project
 
 <a href="https://www.buymeacoffee.com/nimrodharel?new=1" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
