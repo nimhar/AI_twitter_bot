@@ -47,7 +47,7 @@ python -m twitter_bot
 ```
 
 ## Acknolegment
-The bot structure is heavily aided by binance-trade-bot which you may find in here: [watch this repo](https://github.com/edeng23/binance-trade-bot/subscription)
+The bot structure is heavily aided by binance-trade-bot which you may find in here: [watch this repo](https://github.com/edeng23/binance-trade-bot)
 
 
 ## Support the Project
